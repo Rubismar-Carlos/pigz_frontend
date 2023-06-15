@@ -1,0 +1,188 @@
+.container_banner {
+    background-image: linear-gradient(to bottom, #FA641E, #FF881F );
+    padding-top: 10px;
+}
+
+.box_banner h1 {
+    font-size: 40px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.text_img_banner {
+    margin-bottom: 20px;
+    margin-top: 32px;
+}
+
+/* mensagem sobre a equipe */
+.box_mensagem {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 400;
+    width: 382px;
+    height: 72px;
+    margin-left: 10px;
+}
+
+.box_mensagem p {
+    margin-right: 20px;
+}
+
+/* layout desktop e mobile */
+@media (min-width: 600px) {
+
+    /* box banner com texto e imagem */
+    .box_banner {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* tamanho da box com texto e imagem */
+    .text_img_banner {
+        display: flex;
+        width: 600px;
+        justify-content: center;
+    }
+
+    /* mensagem sobre a equipe */
+    .box_mensagem {
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 599px) {
+    
+    /* tamanho da box com texto e imagem */
+    .text_img_banner {
+        width: 100%;
+        display: flex;
+    }
+
+    /* box do h1 */
+    .text_banner {
+        width: 382px;
+        height: 200px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .text_banner h1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img_banner {
+        overflow: hidden;
+        width: 130px;
+        height: 250px;
+    }
+
+    .img_banner img {
+        position: relative;
+        left: -50%;
+    }    
+}
+
+/* box formulario */
+.form {
+    width: 382px;
+    height: 547px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.form h2 {
+    color: #333333;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 32px;
+}
+
+.form p {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.form label {
+    color: #333333;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.form form {
+    width: 334px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid #999999;
+}
+
+.form input:focus {
+    outline: none;
+    padding-left: 10px;
+}
+
+.form input::placeholder {
+    padding-left: 10px;
+}
+
+.form input[type="number"] {
+    border: none;
+}
+
+.form input[type="submit"] {
+    margin-top: 40px;
+    background-color: #FA641E;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.form select {
+    border: none;
+    border-radius: 20px;
+    background-color: #F0F0F0;
+    border-right: 1px solid black;
+    cursor: pointer;
+    width: 100px;
+}
+
+.form option {
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.form select:focus, option:focus {
+    outline: none;
+}
+
+.form_input_tel {
+    display: flex;
+    border: 1px solid #999999;
+    border-radius: 15px;
+}
+
+/* logo da empresa banner */
+.logo_banner {
+    text-align: center;
+    height: 100px;
+}
+
+.logo_banner img {
+    position: relative;
+    top: 30px;
+}

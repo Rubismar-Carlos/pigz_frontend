@@ -1,6 +1,6 @@
 import styles from './Navbar.module.css'
 
-import logo from '../../imagens/logo.png'
+import logo from '../../imagens/navbar/logo.png'
 
 const Navbar = () => {
 
