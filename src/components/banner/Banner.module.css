@@ -104,12 +104,16 @@
     color: #333333;
     font-size: 13px;
     font-weight: 400;
+    margin-top: 8px;
 }
 
 .form label {
     color: #333333;
     font-size: 12px;
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }
 
 .form form {
@@ -117,10 +121,9 @@
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
-.form input {
+.form1 input {
     width: 100%;
     height: 48px;
     border: none;
@@ -135,15 +138,17 @@
 
 .form input::placeholder {
     padding-left: 10px;
+    color: #CCCCCC;
 }
 
-.form input[type="number"] {
+.form1 input[type="tel"] {
     border: none;
 }
 
 .form input[type="submit"] {
     margin-top: 40px;
     background-color: #FA641E;
+    width: 100%;
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 500;
@@ -151,16 +156,15 @@
     border: none;
 }
 
-.form select {
+.form1 select {
     border: none;
     border-radius: 20px;
     background-color: #F0F0F0;
-    border-right: 1px solid black;
     cursor: pointer;
     width: 100px;
 }
 
-.form option {
+.form1 option {
     border: none;
     border-radius: 20px;
     background-color: transparent;
@@ -174,6 +178,7 @@
     display: flex;
     border: 1px solid #999999;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 /* logo da empresa banner */
@@ -185,4 +190,62 @@
 .logo_banner img {
     position: relative;
     top: 30px;
+}
+
+/* form 2 */
+.form2 input {
+    border: 1px solid #999999;
+    height: 48px;
+    border-radius: 20px;
+}
+
+.form_select_cep {
+    display: flex;
+    gap: 15px;
+}
+
+.form_estado {
+    width: 114px;
+}
+
+.form_cidade {
+    width: 205px;
+}
+
+.form_select_cep select {
+    height: 48px;
+    border: 1px solid #999999;
+    border-radius: 20px;
+}
+
+.form_select_cep > select > #estado {
+    width: 118px;
+    border: 20px;
+}
+
+.form_endereco {
+    display: flex;
+    gap: 15px;
+}
+
+.form_endereco input[type="tel"] {
+    width: 114px;
+}
+
+.form_endereco input[type="text"] {
+    width: 200px;
+}
+
+/* form tres */
+.form3 input {
+    height: 48px;
+    border-radius: 20px;
+    border: 1px solid #999999;
+}
+
+.form3 select {
+    height: 48px;
+    border-radius: 20px;
+    border: 1px solid #999999;
+    margin-bottom: 60px;
 }

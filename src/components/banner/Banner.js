@@ -10,12 +10,40 @@ const Banner = () => {
     
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
+    const [pais, setPais] = useState("")
     const [telefone, setTelefone] = useState("")
+    const [cep, setCep] = useState("")
+    const [estado, setEstado] = useState("")
+    const [cidade, setCidade] = useState("")
+    const [endereco, setEndereco] = useState("")
+    const [numero, setNumero] = useState("")
+    const [complemento, setComplemento] = useState("")
+    const [nomeLoja, setNomeLoja] = useState("")
+    const [cnpj, setCnpj] = useState("")
+    const [tipoLoja, setTipoLoja] = useState("")
+
+    const [formAtual, setFormAtual] = useState(1)
+    const [dadosForm, setDadosForm] = useState({
+        form1: '',
+        form2: '',
+        form3: ''
+    })
+
+    const nextForm = () => {
+        setFormAtual(formAtual + 1)
+    }
 
     const handleSubmitForm = (e) => {
         e.preventDefault()
 
-        console.log(nome, email, telefone)
+        console.log(nome, email, pais, telefone, cep, estado, cidade, endereco, numero, complemento, nomeLoja, cnpj, tipoLoja)
+
+        setTimeout(() => {
+            setNome("")
+            setEmail("")
+            setTelefone("")
+            setFormAtual(1)
+        }, 1000)
     }
 
 
@@ -40,33 +68,185 @@ const Banner = () => {
 
         <div className={styles.box_form}>
             <div className={styles.form}>
-                <form onSubmit={handleSubmitForm}>
-                    <h2>Quero vender no Pigz</h2>
-                    <p>Dê o primeiro passo para aumentar suas vendas</p>
-                    <label>
-                        Nome
-                        <input type="text" placeholder="Leonercio Goesfeeld" value={nome} onChange={(e) => setNome(e.target.value)}/>
-                    </label>
-                    <label>
-                        E-mail
-                        <input type="text" placeholder="leonercio.goesfeeld@email.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    </label>
-                    <label>
-                        Telefone
-                        <div className={styles.form_input_tel}>
-                            <select name="" id="">
-                                <option value="Brasil">Brasil +55</option>
-                                <option value="Eua">Brasil +56</option>
-                                <option value="França">Brasil +57</option>
-                                <option value="Inglaterra">Brasil +58</option>
-                            </select>
-                            <input type="number" placeholder="(95) 99876-5432" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
+                <form>
+
+                    {/* Formulário um */}
+                   {formAtual === 1 && (
+                        <div className={styles.form1}>
+                            <h2>Quero vender no Pigz</h2>
+                            <p>Dê o primeiro passo para aumentar suas vendas</p>
+                            <label>
+                                Nome
+                                <input 
+                                    type="text" 
+                                    placeholder="Leonercio Goesfeeld"
+                                    value={nome} 
+                                    onChange={(e) => setNome(e.target.value)}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                E-mail
+                                <input 
+                                    type="text" 
+                                    placeholder="leonercio.goesfeeld@email.com" 
+                                    value={email} 
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Telefone
+                                <div className={styles.form_input_tel}>
+                                    <select name="pais" id="pais" required value={pais} onChange={(e) => setPais(e.target.value)}>
+                                        <option value="Brasil">Brasil +55</option>
+                                        <option value="Eua">Brasil +56</option>
+                                        <option value="França">Brasil +57</option>
+                                        <option value="Inglaterra">Brasil +58</option>
+                                    </select>
+                                    <input 
+                                        type="tel" 
+                                        placeholder="(95) 99876-5432" 
+                                        maxLength={11}
+                                        value={telefone} 
+                                        onChange={(e) => setTelefone(e.target.value)}
+                                        required    
+                                    />
+                                </div>
+                            </label>
+                            <p>Ao continuar, aceito que a Pigz entre em contato comigo por telefone, e-mail ou WhatsApp.</p>
+                            <div>
+                                <input 
+                                    type="submit" 
+                                    value="Continuar" 
+                                    disabled={nome === "" || email === "" || pais === "" || telefone === ""}
+                                    onClick={nextForm}/>
+                            </div>    
                         </div>
-                    </label>
-                    <p>Ao continuar, aceito que a Pigz entre em contato comigo por telefone, e-mail ou WhatsApp.</p>
-                    <div>
-                        <input type="submit" value="Continuar" />
-                    </div>
+                   )} 
+
+                    {/* Formulário dois */}
+                   {formAtual === 2 && (
+                        <div className={styles.form2}>
+                            <h2>Onde fica a sua loja?</h2>
+                            <label>
+                                CEP
+                                <input 
+                                    type="tel" 
+                                    placeholder="00000-00"
+                                    maxLength={8}
+                                    value={cep} 
+                                    onChange={(e) => setCep(e.target.value)}
+                                    required
+                                />
+                            </label>
+                            <div className={styles.form_select_cep}>
+                                <label>
+                                    Estado
+                                    <select name="estado" id="estado" className={styles.form_estado} value={estado} required onChange={(e) => setEstado(e.target.value)}>
+                                        <option value="Brasil">UF</option>
+                                        <option value="Eua">PR</option>
+                                        <option value="França">SP</option>
+                                        <option value="Inglaterra">GO</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Cidade
+                                    <select name="cidade" id="cidade" placeholder='Cidade' className={styles.form_cidade} value={cidade} required onChange={(e) => setCidade(e.target.value)}>
+                                        <option value="Brasil">Selecione</option>
+                                        <option value="Eua">Curitiba</option>
+                                        <option value="França">São Paulo</option>
+                                        <option value="Inglaterra">Goiânia</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <label>
+                                Endereço
+                                <input 
+                                    type="text" 
+                                    placeholder="Avenida Brasil" 
+                                    value={endereco} 
+                                    onChange={(e) => setEndereco(e.target.value)}
+                                    required
+                                />
+                            </label>
+                            <div className={styles.form_endereco}>
+                                <label>
+                                    Número
+                                    <input 
+                                        type="tel" 
+                                        placeholder='123'
+                                        maxLength={3}
+                                        value={numero}
+                                        onChange={(e) => setNumero(e.target.value)}
+                                        required
+                                    />
+                                </label>
+                                <label>
+                                    Complemento
+                                    <input 
+                                        type="text" 
+                                        placeholder='Sala 1' 
+                                        value={complemento}
+                                        onChange={(e) => setComplemento(e.target.value)}  
+                                        required  
+                                    />    
+                                </label>
+                            </div>
+                            <div>
+                                <input 
+                                    type="submit" 
+                                    value="Próximo" 
+                                    disabled={cep === "" || estado === "" || cidade === "" || endereco === "" || numero === "" || complemento === ""}
+                                    onClick={nextForm}
+                                />
+                            </div>    
+                        </div>
+                   )}
+
+                    {/* Formulário tres */}
+                   {formAtual === 3 && (
+                        <div className={styles.form3}>
+                            <h2>Me conta um pouco sobre a sua loja</h2>
+                            <label>
+                                Nome da Loja
+                                <input 
+                                    type="text" 
+                                    placeholder="Restaurante Todo Mundo Gosta"
+                                    value={nomeLoja} 
+                                    onChange={(e) => setNomeLoja(e.target.value)}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                CNPJ da loja
+                                <input 
+                                    type="tel" 
+                                    placeholder="12.345.678/0001-99" 
+                                    value={cnpj} 
+                                    onChange={(e) => setCnpj(e.target.value)}
+                                    maxLength={14}
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Tipe de loja
+                                <select name="loja" id="loja" value={tipoLoja} onChange={(e) => setTipoLoja(e.target.value)}>
+                                    <option value="Brasil">Brasil +55</option>
+                                    <option value="Eua">Brasil +56</option>
+                                    <option value="França">Brasil +57</option>
+                                    <option value="Inglaterra">Brasil +58</option>
+                                </select>
+                            </label>
+                            <div>
+                                <input 
+                                    type="submit" 
+                                    value="Concluir" 
+                                    disabled={nomeLoja === "" || cnpj === "" || tipoLoja === ""}
+                                    onClick={handleSubmitForm}/>
+                            </div>    
+                        </div>
+                   )}
                 </form>
             </div>
         </div>
