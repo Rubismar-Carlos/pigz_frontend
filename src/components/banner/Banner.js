@@ -7,6 +7,9 @@ import imgSanduiche from '../../imagens/banner/Grupo de máscara 2405.png'
 import imgLogoBanner from '../../imagens/banner/Grupo 3535.png'
 
 const Banner = () => {
+
+    // url das imagens bandeira dos paises em número
+    
     
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
@@ -95,9 +98,8 @@ const Banner = () => {
                                 <div className={styles.form_input_tel}>
                                     <select name="pais" id="pais" required value={pais} onChange={(e) => setPais(e.target.value)}>
                                         <option value="Brasil">Brasil +55</option>
-                                        <option value="Eua">Brasil +56</option>
-                                        <option value="França">Brasil +57</option>
-                                        <option value="Inglaterra">Brasil +58</option>
+                                        <option value="Eua">EUA +1</option>
+                                        <option value="França">França +33</option>
                                     </select>
                                     <input 
                                         type="tel" 
@@ -139,19 +141,19 @@ const Banner = () => {
                                 <label>
                                     Estado
                                     <select name="estado" id="estado" className={styles.form_estado} value={estado} required onChange={(e) => setEstado(e.target.value)}>
-                                        <option value="Brasil">UF</option>
-                                        <option value="Eua">PR</option>
-                                        <option value="França">SP</option>
-                                        <option value="Inglaterra">GO</option>
+                                        <option value="Estado">UF</option>
+                                        <option value="PR">PR</option>
+                                        <option value="SP">SP</option>
+                                        <option value="GO">GO</option>
                                     </select>
                                 </label>
                                 <label>
                                     Cidade
                                     <select name="cidade" id="cidade" placeholder='Cidade' className={styles.form_cidade} value={cidade} required onChange={(e) => setCidade(e.target.value)}>
-                                        <option value="Brasil">Selecione</option>
-                                        <option value="Eua">Curitiba</option>
-                                        <option value="França">São Paulo</option>
-                                        <option value="Inglaterra">Goiânia</option>
+                                        <option value="Selecione">Selecione</option>
+                                        <option value="Curitiba">Curitiba</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="Goiânia">Goiânia</option>
                                     </select>
                                 </label>
                             </div>
@@ -227,10 +229,8 @@ const Banner = () => {
                             <label>
                                 Tipe de loja
                                 <select name="loja" id="loja" value={tipoLoja} onChange={(e) => setTipoLoja(e.target.value)}>
-                                    <option value="Brasil">Brasil +55</option>
-                                    <option value="Eua">Brasil +56</option>
-                                    <option value="França">Brasil +57</option>
-                                    <option value="Inglaterra">Brasil +58</option>
+                                    <option value="FastFood">FastFood</option>
+                                    <option value="FastFood">FastFood</option>
                                 </select>
                             </label>
                             <div>
