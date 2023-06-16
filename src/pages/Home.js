@@ -4,6 +4,7 @@ import styles from './Home.module.css'
 import Banner from '../components/banner/Banner'
 import Ofertas from '../components/ofertas/Ofertas'
 import Slider from '../components/slider/Slider'
+import Suporte from '../components/suporte/Suporte'
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
       </div>
       <div className={styles.container_slide}>
           <Slider />
+      </div>
+      <div className={styles.container_suporte}>
+          <Suporte />
       </div>
     </div>
   )
