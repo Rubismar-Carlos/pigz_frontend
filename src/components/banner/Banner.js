@@ -23,11 +23,6 @@ const Banner = () => {
     const [tipoLoja, setTipoLoja] = useState("")
 
     const [formAtual, setFormAtual] = useState(1)
-    const [dadosForm, setDadosForm] = useState({
-        form1: '',
-        form2: '',
-        form3: ''
-    })
 
     const nextForm = () => {
         setFormAtual(formAtual + 1)

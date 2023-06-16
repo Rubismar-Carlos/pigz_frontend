@@ -1,0 +1,68 @@
+.container_slide {
+    margin-top: 36px;
+}
+
+.box_checkbox {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.box_checkbox button {
+    width: 88px;
+    height: 4px;
+    border: none;
+}
+
+.slide_ativado {
+    background-color: #FA641E;
+}
+
+.container_box_slide {
+    height: 501px;
+    width: 382px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box_slide {
+    height: 501px;
+    width: 382px;
+}
+
+.box_slide h3 {
+    margin-top: 20px;
+    color: #333333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.box_interno_slide {
+    margin-top: 40px;
+    width: 382px;
+    height: 400px;
+    background-image: linear-gradient(to bottom, #FA641E, #FF881F );
+    border-radius: 60px;
+}
+
+.box_interno_p {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 300;
+    width: 302px;
+    height: 105px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box_interno_p p {
+    padding-top: 40px;
+}
+
+.box_interno_img {
+    margin-top: 96px;
+    width: 382px;
+    height: 200px;
+}
